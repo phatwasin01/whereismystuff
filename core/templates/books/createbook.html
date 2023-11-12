@@ -1,0 +1,155 @@
+{% extends "core/base.html" %} {% block content %} {% load static %}
+
+<div class="flex flex-col w-full h-full justify-start items-center">
+  <p class="text-4xl text-customOrange font-bold mt-16">Add New Books</p>
+
+  <form
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 p-4 lg:p-16"
+    hx-post="/book/add"
+    hx-target="#book-list"
+    hx-swap="beforeend"
+  >
+    {% csrf_token %}
+    <div class="mb-4">
+      <label
+        for="bookTitle"
+        class="block mb-2 text-sm font-medium text-gray-600"
+        >Book Title</label
+      >
+      <input
+        type="text"
+        id="bookTitle"
+        name="bookTitle"
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="bookType" class="block mb-2 text-sm font-medium text-gray-600"
+        >Book type</label
+      >
+      <select
+        id="bookType"
+        name="bookType"
+        class="w-full px-3 py-2 border rounded-md"
+      >
+        {% for type in book_types %}
+        <option value="{{ type.name }}">{{ type.name }}</option>
+        {% endfor %}
+        <option value="Others">Others</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label
+        for="authorName"
+        class="block mb-2 text-sm font-medium text-gray-600"
+        >Author name</label
+      >
+      <input
+        type="text"
+        id="authorName"
+        name="authorName"
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="mb-4">
+      <span class="block mb-2 text-sm font-medium text-gray-600"
+        >Categories</span
+      >
+      <div class="flex flex-wrap">
+        {% for category in categories %}
+        <label class="inline-flex items-center m-1">
+          <input
+            type="checkbox"
+            name="categories"
+            value="{{ category.name }}"
+            class="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          />
+          <span class="ml-2 text-sm text-gray-700">{{ category.name }}</span>
+        </label>
+        {% endfor %}
+        <label class="inline-flex items-center m-1">
+          <input
+            type="checkbox"
+            name="categories"
+            value="Others"
+            class="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          />
+          <span class="ml-2 text-sm text-gray-700">Others</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="language" class="block mb-2 text-sm font-medium text-gray-600"
+        >Language</label
+      >
+      <input
+        type="text"
+        id="language"
+        name="language"
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="status" class="block mb-2 text-sm font-medium text-gray-600"
+        >Status</label
+      >
+      <select
+        id="status"
+        name="status"
+        class="w-full px-3 py-2 border rounded-md"
+      >
+        <option value="AVAILABLE">Available</option>
+        <option value="BORROWED">Borrowed</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label
+        for="publishYear"
+        class="block mb-2 text-sm font-medium text-gray-600"
+        type="number"
+        >Publish year</label
+      >
+      <input
+        type="text"
+        id="publishYear"
+        name="publishYear"
+        class="w-full px-3 py-2 border rounded-md"
+      />
+    </div>
+    <div class="mb-4">
+      <label for="picture" class="block mb-2 text-sm font-medium text-gray-600"
+        >Picture</label
+      >
+      <input type="file" id="picture" name="picture" accept="image/*" />
+    </div>
+    <div
+      class="flex flex-col gap-4 md:flex-row md:justify-center md:col-span-2 md:gap-14"
+    >
+      <button
+        type="reset"
+        class="px-6 py-2 bg-white border-2 border-customOrange text-customOrange rounded-full"
+      >
+        Reset
+      </button>
+      <button
+        type="submit"
+        class="px-6 py-2 bg-customOrange text-white rounded-full"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+  <div class="w-full justify-start px-10 pt-4">
+    <p class="text-2xl text-primary font-bold">Recently added</p>
+  </div>
+  <ul
+    id="book-list"
+    class="space-y-4 w-full p-5"
+    hx-confirm="Are you sure?"
+    hx-target="closest li"
+    hx-swap="outerHTML"
+  ></ul>
+</div>
+
+{% endblock %}
