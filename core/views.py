@@ -1,13 +1,18 @@
-from django.http import HttpResponse
+import datetime
+import json
+from django.http import HttpResponse, JsonResponse, QueryDict
 from django.shortcuts import render, redirect
-import random
 from django.contrib.auth import login, authenticate, logout
 from .forms import UserCreationForm
 
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from .models import Book, BookType, Category, Friend
+from .models import Book, BookType, Category
+import requests
+from threading import Thread
+from django.core.cache import cache
+from django.db.models import Count, Q
 
 
 @login_required
@@ -23,9 +28,6 @@ def frontpage(request):
 
 @login_required
 def createBook(request):
-    if (request.method == 'POST'):
-        print(request.POST)
-        return
     book_types = BookType.objects.exclude(name='Others').order_by('name')
     categories = Category.objects.exclude(name='Others').order_by('name')
     return render(request, 'books/createbook.html', {'book_types': book_types, 'categories': categories})
@@ -34,7 +36,8 @@ def createBook(request):
 @login_required
 def editBook(request, id):
     book = Book.objects.get(id=id)
-    return render(request, 'books/editbook.html', {'id': book.id, })
+    return render(request, 'books/editbook.html', {'id': book.id     # type: ignore
+                                                   })
 
 
 @login_required
@@ -56,28 +59,49 @@ def viewBookById(request, id: int):
 
 
 @login_required
-def viewProfile(request):
+def viewProfileAndDashboard(request):
     if request.method == 'PUT':
-        putData = request.PUT
-        print(putData)
+        putData = QueryDict(request.body)
         user = request.user
-        user.username = putData['username']
-        user.email = putData['email']
-        user.first_name = putData['first_name']
-        user.last_name = putData['last_name']
+        user.username = putData.get('username', user.username)
+        user.email = putData.get('email', user.email)
+        user.first_name = putData.get('first_name', user.first_name)
+        user.last_name = putData.get('last_name', user.last_name)
         user.save()
+        context = {
+            'username': user.username,
+            'email': user.email,
+            'first_name': user.first_name,
+            'last_name': user.last_name,
+        }
+        return render(request, 'auth/profileInput.html', {'context': context})
     username = request.user.username
     email = request.user.email
     first_name = request.user.first_name
     last_name = request.user.last_name
+
+    # Annotating categories with the count of books owned by the user
+    categories = Category.objects.annotate(
+        book_count=Count('books', filter=Q(books__owner=request.user))
+    ).distinct()
+
+    category_data = [{'name': category.name,
+                      'value': category.book_count} for category in categories]  # type: ignore
+    # filter categories with 0 books
+    category_data_filter = [
+        category for category in category_data if category['value'] > 0]
+
     context = {
         'username': username,
         'email': email,
         'first_name': first_name,
-        'last_name': last_name
+        'last_name': last_name,
+    }
+    dashboard_data = {
+        'category_data': json.dumps(category_data_filter)
     }
 
-    return render(request, 'auth/profile.html', context)
+    return render(request, 'auth/profile.html', {'context': context, 'dashboard_data': dashboard_data})
 
 
 def editProfile(request):
@@ -86,7 +110,6 @@ def editProfile(request):
 
 @login_required
 def addBooks(request):
-    print(request.POST)
     if request.method == 'POST':
         params = request.POST
         book_title = params['bookTitle']
@@ -107,7 +130,7 @@ def addBooks(request):
         except:
             type_obj = None
 
-        if not categories_obj.exists():
+        if not (categories_obj != None and categories_obj.exists()):
             messages.error(request, "Category doesn't exist")
             return HttpResponse(status=500, content='')
 
@@ -125,9 +148,10 @@ def addBooks(request):
             owner=request.user,
         )
         new_book.save()
-        print(categories_obj)
         new_book.categories.set(categories_obj)
         return render(request, 'books/addedbook.html', {'new_book': new_book, 'categories': categories_obj, 'book_type': type_obj})
+    else:
+        return HttpResponse(status=500, content='')
 
 
 def register(request):
@@ -164,4 +188,25 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
-# TODO : Edit Books
+
+def getBestSellingBooks(request):
+    BASE_URL = 'https://api.nytimes.com/svc/books/v3/lists/current/'
+    API_KEY = 'GwjdK16uSaRrs2OSjdgOg9LBJyZqsmBe'
+    category_list = ['combined-print-and-e-book-nonfiction.json',
+                     'combined-print-and-e-book-fiction.json']
+    category_display = ['Non-Fiction', 'Fiction']
+
+    books_data = []
+
+    for category in category_list:
+        cache_key = f'nyt_books_{category}'
+        data = cache.get(cache_key)
+
+        if not data:
+            response = requests.get(
+                BASE_URL + category + '?api-key=' + API_KEY)
+            data = response.json()
+            cache.set(cache_key, data, timeout=3600)  # Cache for 1 hour
+        books_data.append(data['results']['books'])
+
+    return render(request, 'external/weekly_sales.html', {'nonfiction_books': books_data[0], 'fiction_books': books_data[1], 'category_display': category_display})

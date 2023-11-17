@@ -1,0 +1,67 @@
+{% extends "core/baseSidebar.html" %} {% block content %} {% load static %}
+
+<div class="flex-1 p-4 md:p-10 overflow-y-auto">
+  <h1 class="text-3xl font-bold text-primary text-center mt-4">
+    Weekly Best Selling
+  </h1>
+  <div class="mb-10">
+    <div class="flex justify-between">
+      <h2 class="text-2xl mb-4 text-primary font-semibold">Non-fiction</h2>
+    </div>
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7 gap-4 place-items-center"
+    >
+      {% for book in nonfiction_books %}
+      <a
+        href="{{ book.amazon_product_url}}"
+        target="_blank"
+        class="bg-white p-2 w-44 h-64 rounded-lg border-4 border-cream shadow-[8px_8px_0_0_rgba(236,174,125,1.00)] hover:transition-all hover:scale-105 mt-4 relative flex flex-col justify-center items-center"
+      >
+        <img
+          src="{{ book.book_image }}"
+          alt="Book Image"
+          class="mb-2 w-28 h-36 rounded-sm"
+        />
+        <p class="text-primary text-sm line-clamp-2">{{ book.title }}</p>
+        <p class="text-xs text-secondary line-clamp-1">{{book.author}}</p>
+        <div class="absolute bottom-1 right-1">
+          <div class="bg-secondary w-6 h-6 text-white rounded-full text-center">
+            {{book.rank}}
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="mb-10">
+    <div class="flex justify-between">
+      <h2 class="text-2xl mb-4 text-primary font-semibold">Fiction</h2>
+    </div>
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-7 gap-4 place-items-center"
+    >
+      {% for book in fiction_books %}
+      <a
+        href="{{ book.amazon_product_url}}"
+        target="_blank"
+        class="bg-white p-2 w-44 h-64 rounded-lg border-4 border-cream shadow-[8px_8px_0_0_rgba(236,174,125,1.00)] hover:transition-all hover:scale-105 mt-4 relative flex flex-col justify-center items-center"
+      >
+        <img
+          src="{{ book.book_image }}"
+          alt="Book Image"
+          class="mb-2 w-28 h-36 rounded-sm"
+        />
+        <p class="text-primary text-sm line-clamp-2">{{ book.title }}</p>
+        <p class="text-xs text-secondary line-clamp-1">{{book.author}}</p>
+        <div class="absolute bottom-1 right-1">
+          <div class="bg-secondary w-6 h-6 text-white rounded-full text-center">
+            {{book.rank}}
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,13 +1,16 @@
-<form
-  class="w-full p-16 md:px-64"
-  hx-put="/profile/"
-  hx-target="this"
-  hx-swap="outerHTML"
-  hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
-  hx-confirm="Are you sure you want to update your account?"
->
+{% load static %}
+<form class="w-full p-16 md:px-52" hx-target="this" hx-swap="outerHTML">
   <div class="flex justify-between">
     <p class="text-3xl text-customOrange font-bold mb-4">My Profile</p>
+    <div class="flex justify-end items-start">
+      <button
+        hx-get="/profile/edit"
+        class="w-16 h-16 bg-customOrange text-white rounded-full flex flex-col justify-center items-center hover:bg-customOrange/80"
+      >
+        <img src="{% static 'core/edit.svg' %}" alt="edit" />
+        <p>edit</p>
+      </button>
+    </div>
   </div>
   <div class="mb-4">
     <label for="username" class="block mb-2 text-2xl font-medium text-primary"
@@ -19,6 +22,7 @@
       name="username"
       class="w-full px-3 py-2 border rounded-md text-xl"
       value="{{user.username}}"
+      disabled
     />
   </div>
   <div class="mb-4">
@@ -31,18 +35,23 @@
       name="email"
       class="w-full px-3 py-2 border rounded-md text-xl"
       value="{{user.email}}"
+      disabled
     />
   </div>
   <div class="mb-4">
-    <label for="firstname" class="block mb-2 text-2xl font-medium text-primary"
+    <label
+      for="firstname"
+      class="block mb-2 text-2xl font-medium text-primary"
+      type="number"
       >Firstname</label
     >
     <input
       type="text"
-      id="first_name"
-      name="first_name"
+      id="email"
+      name="email"
       class="w-full px-3 py-2 border rounded-md text-xl"
       value="{{user.first_name}}"
+      disabled
     />
   </div>
   <div class="mb-4">
@@ -51,15 +60,20 @@
     >
     <input
       type="text"
-      id="last_name"
-      name="last_name"
+      id="email"
+      name="email"
       class="w-full px-3 py-2 border rounded-md text-xl"
       value="{{user.last_name}}"
+      disabled
     />
   </div>
-  <button
-    class="w-full flex justify-center py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-secondary"
-  >
-    Save
-  </button>
+  <div class="mb-4">
+    <a href="{% url 'logout' %}" class="">
+      <div
+        class="w-full flex justify-center py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-secondary"
+      >
+        Logout
+      </div>
+    </a>
+  </div>
 </form>

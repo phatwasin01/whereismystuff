@@ -1,0 +1,720 @@
+{
+    "status": "OK",
+    "copyright": "Copyright (c) 2023 The New York Times Company.  All Rights Reserved.",
+    "num_results": 15,
+    "last_modified": "2023-11-16T17:05:26-05:00",
+    "results": [
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 1,
+        "rank_last_week": 0,
+        "weeks_on_list": 1,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/1649374178?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "1649374178",
+            "isbn13": "9781649374172"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "IRON FLAME",
+            "description": "The second book in the Empyrean series. Violet Sorrengail’s next round of training might require her to betray the man she loves.",
+            "contributor": "by Rebecca Yarros",
+            "author": "Rebecca Yarros",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Red Tower",
+            "primary_isbn13": "9781649374172",
+            "primary_isbn10": "1649374178"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 2,
+        "rank_last_week": 3,
+        "weeks_on_list": 28,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/1649374046?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "1649374046",
+            "isbn13": "9781649374042"
+          },
+          {
+            "isbn10": "1649374089",
+            "isbn13": "9781649374080"
+          },
+          {
+            "isbn10": "1705085059",
+            "isbn13": "9781705085059"
+          },
+          {
+            "isbn10": "1705085032",
+            "isbn13": "9781705085035"
+          },
+          {
+            "isbn10": "1649376162",
+            "isbn13": "9781649376169"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "FOURTH WING",
+            "description": "Violet Sorrengail is urged by the commanding general, who also is her mother, to become a candidate for the elite dragon riders.",
+            "contributor": "by Rebecca Yarros",
+            "author": "Rebecca Yarros",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Red Tower",
+            "primary_isbn13": "9781649376169",
+            "primary_isbn10": "1649376162"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 3,
+        "rank_last_week": 0,
+        "weeks_on_list": 1,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/0316563765?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "0316563765",
+            "isbn13": "9780316563765"
+          },
+          {
+            "isbn10": "0316570362",
+            "isbn13": "9780316570367"
+          },
+          {
+            "isbn10": "0316563781",
+            "isbn13": "9780316563789"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "RESURRECTION WALK",
+            "description": "The seventh book in the Lincoln Lawyer series. Haller and Bosch team up to prove the innocence of a woman in prison for killing her husband.",
+            "contributor": "by Michael Connelly",
+            "author": "Michael Connelly",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Little, Brown",
+            "primary_isbn13": "9780316563789",
+            "primary_isbn10": "0316563781"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 4,
+        "rank_last_week": 2,
+        "weeks_on_list": 4,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/0385548958?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "0385548958",
+            "isbn13": "9780385548953"
+          },
+          {
+            "isbn10": "0385548966",
+            "isbn13": "9780385548960"
+          },
+          {
+            "isbn10": "0593607481",
+            "isbn13": "9780593607480"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "THE EXCHANGE",
+            "description": "In a sequel to “The Firm,” Mitch McDeere, who is now a partner at the world’s largest law firm, gets caught up in a sinister plot.",
+            "contributor": "by John Grisham",
+            "author": "John Grisham",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Doubleday",
+            "primary_isbn13": "9780385548953",
+            "primary_isbn10": "0385548958"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 5,
+        "rank_last_week": 0,
+        "weeks_on_list": 1,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/1250886104?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "1250886104",
+            "isbn13": "9781250886101"
+          },
+          {
+            "isbn10": "1250323223",
+            "isbn13": "9781250323224"
+          },
+          {
+            "isbn10": "1250886112",
+            "isbn13": "9781250886118"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "BOOKSHOPS & BONEDUST",
+            "description": "In a prequel to “Legends & Lattes,\" an orc who was hurt during a battle winds up in a sleepy beach town called Murk.",
+            "contributor": "by Travis Baldree",
+            "author": "Travis Baldree",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Tor",
+            "primary_isbn13": "9781250886101",
+            "primary_isbn10": "1250886104"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 6,
+        "rank_last_week": 5,
+        "weeks_on_list": 3,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/1984818589?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "1984818589",
+            "isbn13": "9781984818584"
+          },
+          {
+            "isbn10": "1984818597",
+            "isbn13": "9781984818591"
+          },
+          {
+            "isbn10": "0593452801",
+            "isbn13": "9780593452806"
+          },
+          {
+            "isbn10": "0593452798",
+            "isbn13": "9780593452790"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "THE SECRET",
+            "description": "The 28th book in the Jack Reacher series. It’s 1992 and Reacher looks into the cause of a string of mysterious deaths.",
+            "contributor": "by Lee Child and Andrew Child",
+            "author": "Lee Child and Andrew Child",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Delacorte",
+            "primary_isbn13": "9781984818584",
+            "primary_isbn10": "1984818589"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 7,
+        "rank_last_week": 1,
+        "weeks_on_list": 2,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/1668003090?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "1668003090",
+            "isbn13": "9781668003091"
+          },
+          {
+            "isbn10": "1668003120",
+            "isbn13": "9781668003121"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "DIRTY THIRTY",
+            "description": "The 30th book in the Stephanie Plum series. Plum tracks a local jeweler’s former security guard and has an overnight stakeout with relatives.",
+            "contributor": "by Janet Evanovich",
+            "author": "Janet Evanovich",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Atria",
+            "primary_isbn13": "9781668003091",
+            "primary_isbn10": "1668003090"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 8,
+        "rank_last_week": 7,
+        "weeks_on_list": 53,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/038554734X?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "038554734X",
+            "isbn13": "9780385547345"
+          },
+          {
+            "isbn10": "0593507533",
+            "isbn13": "9780593507537"
+          },
+          {
+            "isbn10": "0385547374",
+            "isbn13": "9780385547376"
+          },
+          {
+            "isbn10": "0593862406",
+            "isbn13": "9780593862407"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "LESSONS IN CHEMISTRY",
+            "description": "A scientist and single mother living in California in the 1960s becomes a star on a TV cooking show.",
+            "contributor": "by Bonnie Garmus",
+            "author": "Bonnie Garmus",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Doubleday",
+            "primary_isbn13": "9780385547345",
+            "primary_isbn10": "038554734X"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 9,
+        "rank_last_week": 8,
+        "weeks_on_list": 85,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "http://www.amazon.com/All-Light-We-Cannot-See/dp/1476746583?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "1476746583",
+            "isbn13": "9781476746586"
+          },
+          {
+            "isbn10": "1410470229",
+            "isbn13": "9781410470225"
+          },
+          {
+            "isbn10": "1476746591",
+            "isbn13": "9781476746593"
+          },
+          {
+            "isbn10": "1501122835",
+            "isbn13": "9781501122835"
+          },
+          {
+            "isbn10": "0007548699",
+            "isbn13": "9780007548699"
+          },
+          {
+            "isbn10": "1501173219",
+            "isbn13": "9781501173219"
+          },
+          {
+            "isbn10": "1668017342",
+            "isbn13": "9781668017340"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "ALL THE LIGHT WE CANNOT SEE",
+            "description": "The lives of a blind French girl and a gadget-obsessed German boy before and during World War II.",
+            "contributor": "by Anthony Doerr",
+            "author": "Anthony Doerr",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Scribner",
+            "primary_isbn13": "9781501173219",
+            "primary_isbn10": "1501173219"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "https://www.nytimes.com/2014/05/11/books/review/all-the-light-we-cannot-see-by-anthony-doerr.html",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 10,
+        "rank_last_week": 0,
+        "weeks_on_list": 1,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/059354417X?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "059354417X",
+            "isbn13": "9780593544174"
+          },
+          {
+            "isbn10": "0593544188",
+            "isbn13": "9780593544181"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "CLIVE CUSSLER: THE CORSICAN SHADOW",
+            "description": "The 27th book in the Dirk Pitt series. A murderous cabal targets water treatment facilities around the world.",
+            "contributor": "by Dirk Cussler",
+            "author": "Dirk Cussler",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Putnam",
+            "primary_isbn13": "9780593544181",
+            "primary_isbn10": "0593544188"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 11,
+        "rank_last_week": 0,
+        "weeks_on_list": 1,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/1728292131?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "",
+            "isbn13": ""
+          },
+          {
+            "isbn10": "1728292131",
+            "isbn13": "9781728292137"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "LOVE REDESIGNED",
+            "description": "An interior designer and a billionaire who were childhood rivals have an attraction to each other.",
+            "contributor": "by Lauren Asher",
+            "author": "Lauren Asher",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Bloom",
+            "primary_isbn13": "9781728292137",
+            "primary_isbn10": "1728292131"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 12,
+        "rank_last_week": 11,
+        "weeks_on_list": 21,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/1668026031?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "1668026031",
+            "isbn13": "9781668026038"
+          },
+          {
+            "isbn10": "166802604X",
+            "isbn13": "9781668026045"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "ICEBREAKER",
+            "description": "Anastasia might need the help of the captain of a college hockey team to get on the Olympic figure skating team.",
+            "contributor": "by Hannah Grace",
+            "author": "Hannah Grace",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Atria",
+            "primary_isbn13": "9781668026038",
+            "primary_isbn10": "1668026031"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 13,
+        "rank_last_week": 0,
+        "weeks_on_list": 1,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/0593637844?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "0593637852",
+            "isbn13": "9780593637852"
+          },
+          {
+            "isbn10": "0593637844",
+            "isbn13": "9780593637845"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "SLAY",
+            "description": "The 30th book in the Anita Blake, Vampire Hunter series. Anita must introduce her fiancé, who is the vampire king of America, to her very religious family.",
+            "contributor": "by Laurell K. Hamilton",
+            "author": "Laurell K. Hamilton",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Berkley",
+            "primary_isbn13": "9780593637852",
+            "primary_isbn10": "0593637852"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 14,
+        "rank_last_week": 0,
+        "weeks_on_list": 1,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/0451466829?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "0451466829",
+            "isbn13": "9780451466822"
+          },
+          {
+            "isbn10": "0698138031",
+            "isbn13": "9780698138032"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "THE OLYMPIAN AFFAIR",
+            "description": "The second book in the Cinder Spires series. The Spires may soon be involved in an open war.",
+            "contributor": "by Jim Butcher",
+            "author": "Jim Butcher",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Ace",
+            "primary_isbn13": "9780698138032",
+            "primary_isbn10": "0698138031"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      },
+      {
+        "list_name": "Combined Print and E-Book Fiction",
+        "display_name": "Combined Print & E-Book Fiction",
+        "bestsellers_date": "2023-11-11",
+        "published_date": "2023-11-26",
+        "rank": 15,
+        "rank_last_week": 12,
+        "weeks_on_list": 22,
+        "asterisk": 0,
+        "dagger": 0,
+        "amazon_product_url": "https://www.amazon.com/dp/1538742578?tag=NYTBSREV-20",
+        "isbns": [
+          {
+            "isbn10": "1538742578",
+            "isbn13": "9781538742570"
+          }
+        ],
+        "book_details": [
+          {
+            "title": "THE HOUSEMAID",
+            "description": "Troubles surface when a woman looking to make a fresh start takes a job in the home of the Winchesters.",
+            "contributor": "by Freida McFadden",
+            "author": "Freida McFadden",
+            "contributor_note": "",
+            "price": "0.00",
+            "age_group": "",
+            "publisher": "Grand Central",
+            "primary_isbn13": "9781538742570",
+            "primary_isbn10": "1538742578"
+          }
+        ],
+        "reviews": [
+          {
+            "book_review_link": "",
+            "first_chapter_link": "",
+            "sunday_review_link": "",
+            "article_chapter_link": ""
+          }
+        ]
+      }
+    ]
+  }
