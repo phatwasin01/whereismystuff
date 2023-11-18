@@ -189,6 +189,7 @@ def logout_view(request):
     return redirect('login')
 
 
+@login_required
 def getBestSellingBooks(request):
     BASE_URL = 'https://api.nytimes.com/svc/books/v3/lists/current/'
     API_KEY = 'GwjdK16uSaRrs2OSjdgOg9LBJyZqsmBe'
@@ -210,3 +211,18 @@ def getBestSellingBooks(request):
         books_data.append(data['results']['books'])
 
     return render(request, 'external/weekly_sales.html', {'nonfiction_books': books_data[0], 'fiction_books': books_data[1], 'category_display': category_display})
+
+
+@login_required
+def viewBookTable(request):
+    if request.method == 'POST':
+        search = request.POST['search']
+        books = Book.objects.filter(owner=request.user).filter(
+            Q(title__icontains=search) | Q(author__icontains=search) | Q(
+                categories__name__icontains=search) | Q(
+                book_type__name__icontains=search) | Q(
+                language__icontains=search)
+        ).distinct()
+        return render(request, 'books/bookTableRow.html', {'books': books})
+    books = Book.objects.all().filter(owner=request.user)
+    return render(request, 'books/book_table.html', {'books': books})

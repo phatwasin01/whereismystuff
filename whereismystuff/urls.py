@@ -12,9 +12,8 @@ urlpatterns = [
     path('profile/', viewProfileAndDashboard, name='profile'),
     path('profile/edit', editProfile, name='editprofile'),
     path('book/add', addBooks, name='addBooks'),
-    # path('category/add', addCategory, name='addCategory'),
     path('weekly_ranking/', getBestSellingBooks, name='weekly_ranking'),
-
+    path('mylist/', viewBookTable, name='mylist'),
     path('accounts/login/', login_view, name='login'),
     path('accounts/logout/', logout_view, name='logout'),
     path('accounts/register/', register, name='register'),

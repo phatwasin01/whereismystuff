@@ -1,0 +1,23 @@
+{% for book in books %}
+<tr class="hover:bg-secondary hover:text-white">
+  <td class="border border-slate-700 p-1">
+    <a href="{% url 'viewbook' book.id %}">{{book.title}}</a>
+  </td>
+  <td class="border border-slate-700">
+    <a href="{% url 'viewbook' book.id %}">{{book.author}}</a>
+  </td>
+  <td class="border border-slate-700">
+    <a href="{% url 'viewbook' book.id %}">{{book.language}}</a>
+  </td>
+  <td class="border border-slate-700">
+    <a href="{% url 'viewbook' book.id %}">{{book.publish_year}}</a>
+  </td>
+  <td class="border border-slate-700">
+    <a href="{% url 'viewbook' book.id %}">{{book.book_type}}</a>
+  </td>
+  <td class="border border-slate-700">
+    <a href="{% url 'viewbook' book.id %}">{{book.status}}</a>
+  </td>
+</tr>
+
+{% endfor %}

@@ -1,0 +1,53 @@
+{% extends "core/baseSidebar.html" %} {% block content %} {% load static %}
+<div class="flex-1 p-4 md:p-10 overflow-y-auto">
+  <div class="flex flex-col w-full h-full justify-start items-center">
+    <input
+      type="search"
+      class="mb-4 w-full px-4 py-2 border rounded-full border-primary focus:border-primary focus:ring-0"
+      name="search"
+      placeholder="Search books..."
+      hx-post="/mylist/"
+      hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+      hx-trigger="input changed delay:500ms, search"
+      hx-target="#search-results"
+    />
+    <table class="table-auto w-full border-collapse border border-slate-500">
+      <thead>
+        <tr class="bg-primary text-white">
+          <th class="border border-slate-600 p-1">Title</th>
+          <th class="border border-slate-600">Author</th>
+          <th class="border border-slate-600">Language</th>
+          <th class="border border-slate-600">Year</th>
+          <th class="border border-slate-600">Type</th>
+          <th class="border border-slate-600">Status</th>
+        </tr>
+      </thead>
+      <tbody class="text-primary" id="search-results">
+        {% for book in books %}
+        <tr class="hover:bg-secondary hover:text-white">
+          <td class="border border-slate-700 p-1">
+            <a href="{% url 'viewbook' book.id %}">{{book.title}}</a>
+          </td>
+          <td class="border border-slate-700">
+            <a href="{% url 'viewbook' book.id %}">{{book.author}}</a>
+          </td>
+          <td class="border border-slate-700">
+            <a href="{% url 'viewbook' book.id %}">{{book.language}}</a>
+          </td>
+          <td class="border border-slate-700">
+            <a href="{% url 'viewbook' book.id %}">{{book.publish_year}}</a>
+          </td>
+          <td class="border border-slate-700">
+            <a href="{% url 'viewbook' book.id %}">{{book.book_type}}</a>
+          </td>
+          <td class="border border-slate-700">
+            <a href="{% url 'viewbook' book.id %}">{{book.status}}</a>
+          </td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{%endblock %}
