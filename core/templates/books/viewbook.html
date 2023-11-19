@@ -33,13 +33,15 @@
 
       <!-- Edit Button -->
       <div class="flex justify-end items-start">
-        <a
-          href="/book/edit/{{ book.id }}"
+        <div
+          hx-get="/book/edit/{{ book.id }}"
+          hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+          hx-target="body"
           class="w-16 h-16 bg-customOrange text-white rounded-full flex flex-col justify-center items-center hover:bg-customOrange/80"
         >
           <img src="{% static 'core/edit.svg' %}" alt="edit" />
           <p>edit</p>
-        </a>
+        </div>
       </div>
     </div>
   </div>

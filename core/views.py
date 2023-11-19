@@ -35,9 +35,47 @@ def createBook(request):
 
 @login_required
 def editBook(request, id):
+    if request.method == 'PUT':
+        putData = QueryDict(request.body)
+        book = Book.objects.get(id=id)
+        if book.owner != request.user:
+            messages.error(
+                request, "You don't have permission to edit this book")
+            return HttpResponse(status=401, content='Unauthorized')
+        book.title = putData.get('bookTitle', book.title)
+        book.status = putData.get('status', book.status)
+        book.author = putData.get('authorName', book.author)
+        book.publish_year = int(putData.get('publishYear', book.publish_year))
+        book.language = putData.get('language', book.language)
+        category_names = putData.getlist('categories')
+        book_type = putData.get('bookType', book.book_type)
+        try:
+            categories_obj = Category.objects.filter(name__in=category_names)
+        except:
+            categories_obj = None
+        # check book type
+        try:
+            type_obj = BookType.objects.get(name=book_type)
+        except:
+            type_obj = None
+
+        if not (categories_obj != None and categories_obj.exists()):
+            messages.error(request, "Category doesn't exist")
+            return redirect('viewbook', id=id)
+
+        if type_obj is None:
+            messages.error(request, "Book type doesn't exist")
+            return redirect('viewbook', id=id)
+        book.book_type = type_obj
+        book.categories.set(categories_obj)
+        book.save()
+        return redirect('viewbook', id=id)
     book = Book.objects.get(id=id)
-    return render(request, 'books/editbook.html', {'id': book.id     # type: ignore
-                                                   })
+    book_types = BookType.objects.exclude(name='Others').order_by('name')
+    categories = Category.objects.exclude(name='Others').order_by('name')
+    checked_categories = [
+        category.name for category in book.categories.all()]
+    return render(request, 'books/editbook.html', {'book': book, 'book_types': book_types, 'categories': categories, 'checked_categories': checked_categories})
 
 
 @login_required

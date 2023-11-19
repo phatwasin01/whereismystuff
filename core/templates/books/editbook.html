@@ -1,9 +1,14 @@
 {% extends "core/base.html" %} {% block content %} {% load static %}
-
 <div class="flex flex-col w-full h-full justify-start items-center">
   <p class="text-4xl text-customOrange font-bold mt-16">Edit Book</p>
 
-  <form class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-16 mt-4">
+  <form
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 p-4 lg:p-16"
+    hx-put="/book/edit/{{book.id}}"
+    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+    hx-confirm="Are you sure you want to update this book?"
+    hx-target="body"
+  >
     <div class="mb-4">
       <label
         for="bookTitle"
@@ -15,6 +20,7 @@
         id="bookTitle"
         name="bookTitle"
         class="w-full px-3 py-2 border rounded-md"
+        value="{{book.title}}"
       />
     </div>
     <div class="mb-4">
@@ -26,12 +32,10 @@
         name="bookType"
         class="w-full px-3 py-2 border rounded-md"
       >
-        <option value="fiction">Fiction</option>
-        <option value="non-fiction">Non-fiction</option>
-        <option value="biography">Biography</option>
-        <option value="self-help">Self-help</option>
-        <option value="mystery">Mystery</option>
-        <option value="others">Others</option>
+        {% for type in book_types %}
+        <option value="{{ type.name }}" {% if type.name == book.book_type.name %} selected {% endif %}>{{ type.name }}</option>
+        {% endfor %}
+        <option value="Others">Others</option>
       </select>
     </div>
     <div class="mb-4">
@@ -45,25 +49,38 @@
         id="authorName"
         name="authorName"
         class="w-full px-3 py-2 border rounded-md"
+        value="{{book.author}}"
       />
     </div>
     <div class="mb-4">
-      <label for="category" class="block mb-2 text-sm font-medium text-gray-600"
-        >Category</label
+      <span class="block mb-2 text-sm font-medium text-gray-600"
+        >Categories</span
       >
-      <select
-        id="category"
-        name="category"
-        class="w-full px-3 py-2 border rounded-md"
-      >
-        <option value="romance">Romance</option>
-        <option value="thriller">Thriller</option>
-        <option value="fantasy">Fantasy</option>
-        <option value="history">History</option>
-        <option value="science">Science</option>
-        <option value="others">Others</option>
-      </select>
+      <div class="flex flex-wrap">
+        {% for category in categories %}
+        <label class="inline-flex items-center m-1">
+          <input
+            type="checkbox"
+            name="categories"
+            value="{{ category.name }}"
+            class="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            {% if category.name in checked_categories %} checked {% endif %}
+          />
+          <span class="ml-2 text-sm text-gray-700">{{ category.name }}</span>
+        </label>
+        {% endfor %}
+        <label class="inline-flex items-center m-1">
+          <input
+            type="checkbox"
+            name="categories"
+            value="Others"
+            class="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          />
+          <span class="ml-2 text-sm text-gray-700">Others</span>
+        </label>
+      </div>
     </div>
+
     <div class="mb-4">
       <label for="language" class="block mb-2 text-sm font-medium text-gray-600"
         >Language</label
@@ -73,6 +90,7 @@
         id="language"
         name="language"
         class="w-full px-3 py-2 border rounded-md"
+        value="{{book.language}}"
       />
     </div>
     <div class="mb-4">
@@ -84,8 +102,8 @@
         name="status"
         class="w-full px-3 py-2 border rounded-md"
       >
-        <option value="available">Available</option>
-        <option value="borrowed">Borrowed</option>
+        <option value="AVAILABLE" {% if book.status == "AVAILABLE" %} selected {% endif %}>Available</option>
+        <option value="BORROWED" {% if book.status == "BORROWED" %} selected {% endif %}>Borrowed</option>
       </select>
     </div>
     <div class="mb-4">
@@ -100,6 +118,7 @@
         id="publishYear"
         name="publishYear"
         class="w-full px-3 py-2 border rounded-md"
+        value="{{book.publish_year}}"
       />
     </div>
     <div class="mb-4">
@@ -109,7 +128,7 @@
       <input type="file" id="picture" name="picture" accept="image/*" />
     </div>
     <div
-      class="flex flex-col-reverse gap-4 md:flex-row md:justify-center md:col-span-2 md:gap-14"
+      class="flex flex-col gap-4 md:flex-row md:justify-center md:col-span-2 md:gap-14"
     >
       <button
         type="reset"
