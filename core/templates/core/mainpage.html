@@ -1,26 +1,23 @@
 {% extends "core/baseSidebar.html" %} {% block content %} {% load static %}
 
-<div class="flex-1 p-10 overflow-y-auto">
+<div class="p-4 mt-16 sm:ml-64 md:p-10 w-full">
   {% for category in categories %}
   <div class="mb-10">
     <div class="flex justify-between">
       <h2 class="text-2xl mb-10 text-primary font-semibold">
         {{category.name}}
       </h2>
-      <a href="#" class="text-primary">
-        <img src="{% static 'core/arrow_right.svg' %}" alt="arrow_right" />
-      </a>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
       {% for book in books %} {% if category in book.categories.all %}
       <a
         href="/book/{{ book.id }}"
-        class="bg-white p-4 w-44 h-56 rounded-lg border-4 border-cream shadow-[8px_8px_0_0_rgba(236,174,125,1.00)] hover:transition-all hover:scale-105"
+        class="bg-white p-4 w-44 h-64 rounded-lg border-4 border-cream shadow-[8px_8px_0_0_rgba(236,174,125,1.00)] hover:transition-all hover:scale-105"
       >
         <img
-          src="{% static 'core/book.png' %}"
+          src="{% if book.cover_image_url %}{{ book.cover_image_url }}{% else %}{% static 'core/book.jpeg' %}{% endif %}"
           alt="Book Image"
-          class="mb-2 w-32"
+          class="mb-2 w-28 h-36 rounded-sm"
         />
         <p class="text-primary text-sm line-clamp-2">{{book.title}}</p>
         <p class="text-xs text-secondary line-clamp-1">{{book.author}}</p>

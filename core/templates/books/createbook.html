@@ -5,7 +5,8 @@
 
   <form
     class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 p-4 lg:p-16"
-    hx-post="/book/add"
+    enctype="multipart/form-data"
+    hx-post="/book/create/manual"
     hx-target="#book-list"
     hx-swap="beforeend"
   >

@@ -1,0 +1,8 @@
+{% extends "core/base.html" %} {% block content %} {% load static %}
+
+<div class="flex flex-wrap w-full h-full justify-center items-center md:gap-16">
+  <a class="w-80 h-80 sm:w-96 sm:h-96 border border-dashed rounded-lg border-4 flex justify-center items-center text-3xl text-primary" href={% url 'createbookOCR' %}>OCR</a>
+  <a class="w-80 h-80 sm:w-96 sm:h-96 border border-dashed rounded-lg border-4 flex justify-center items-center text-3xl text-primary" href={% url 'createbook' %}>Mannual</a>
+</div>
+
+{% endblock %}

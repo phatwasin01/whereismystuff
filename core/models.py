@@ -9,24 +9,6 @@ BOOK_STATUS_CHOICES = [
 ]
 
 
-class Friend(models.Model):
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='friends')
-    friend = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='friend_of')
-    timestamp = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        unique_together = (('user', 'friend'),)
-        constraints = [
-            models.CheckConstraint(check=~models.Q(user=models.F(
-                'friend')), name='user_not_friend_with_self'),
-        ]
-
-    def __str__(self):
-        return f"{self.user.username} - {self.friend.username}"
-
-
 class BookType(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
