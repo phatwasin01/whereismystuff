@@ -46,9 +46,9 @@
       };
     </script>
   </head>
-  <body class="bg-white font-sans h-full">
+  <body class="bg-white font-sans pb-64">
     <!-- Navbar -->
-    <div class="bg-primary p-4 shadow-md">
+    <div class="bg-primary p-4 shadow-md h-16 fixed top-0 w-full z-10">
       <div class="mx-auto flex items-center justify-between">
         <a href="/" class="text-white flex gap-x-5">
           <img src="{% static 'core/logo.svg' %}" alt="Logo" />
@@ -58,8 +58,8 @@
         <!-- Profile -->
         <a class="flex overflow-hidden" href="/profile">
           <img
-            class="inline-block h-10 w-10 rounded-full object-cover"
-            src="{% static 'core/profile.jpeg' %}"
+            class="inline-block h-10 w-10 rounded-full"
+            src="{% static 'core/profile_icon.jpeg' %}"
             alt="profile"
           />
         </a>
@@ -69,53 +69,123 @@
     <div class="flex h-full">
       <!-- Sidebar -->
       <div
-        class="hidden md:bg-secondary md:pr-20 md:w-80 xl:w-96 md:pt-11 md:flex md:flex-col md:justify-between md:text-white md:h-full"
+        class="fixed top-16 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-secondary"
       >
-        <div class="text-2xl text-white font-normal">
-          <a
-            href="/"
-            class="pl-16 p-4 block hover:bg-primary hover:bg-opacity-30 hover:border-r-[15px] hover:border-primary"
+        <div class="h-full overflow-y-auto">
+          <ul class="space-y-2 pr-4 text-xl mt-8">
+            <!-- Dashboard Link -->
+            <li>
+              <a
+                href="/"
+                class="flex items-center p-2 text-white hover:bg-primary pl-16 p-4 block hover:bg-primary hover:bg-opacity-30 hover:border-r-[15px] hover:border-primary"
+              >
+                <img
+                  src="{% static 'core/home.svg' %}"
+                  alt="Dashboard"
+                  class="w-5 h-5 mr-3"
+                />
+                <span>Main Page</span>
+              </a>
+            </li>
+            <!-- Weekly Ranking Link -->
+            <li>
+              <a
+                href="/weekly_ranking"
+                class="flex items-center p-2 text-white hover:bg-primary pl-16 p-4 block hover:bg-primary hover:bg-opacity-30 hover:border-r-[15px] hover:border-primary"
+              >
+                <img
+                  src="{% static 'core/ranking.svg' %}"
+                  alt="Ranking"
+                  class="w-5 h-5 mr-3"
+                />
+                <span>Ranking</span>
+              </a>
+            </li>
+            <!-- My List Link -->
+            <li>
+              <a
+                href="/mylist"
+                class="flex items-center p-2 text-white hover:bg-primary pl-16 p-4 block hover:bg-primary hover:bg-opacity-30 hover:border-r-[15px] hover:border-primary"
+              >
+                <img
+                  src="{% static 'core/logo.svg' %}"
+                  alt="My List"
+                  class="w-5 h-5 mr-3"
+                />
+                <span>My List</span>
+              </a>
+            </li>
+            <!-- User Profile Link -->
+            <li>
+              <a
+                href="/profile"
+                class="flex items-center p-2 text-white hover:bg-primary pl-16 p-4 block hover:bg-primary hover:bg-opacity-30 hover:border-r-[15px] hover:border-primary"
+              >
+                <img
+                  src="{% static 'core/user.svg' %}"
+                  alt="Profile"
+                  class="w-5 h-5 mr-3"
+                />
+                <span>Profile</span>
+              </a>
+            </li>
+            <!-- Add Book Link -->
+            <li>
+              <a
+                href="/book/create/methods"
+                class="flex items-center gap-x-2 xl:gap-x-4 bg-customOrange py-4 px-5 rounded-full justify-center hover:bg-customOrange/80 text-white mt-8"
+              >
+                <img
+                  src="{% static 'core/plus.svg' %}"
+                  alt="Add Book"
+                  class="w-5 h-5 mr-3"
+                />
+                <span>Add Book</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        id="bottom-navbar"
+        class="fixed inset-x-0 bottom-0 z-10 w-full sm:hidden transition-transform duration-300"
+      >
+        <div
+          class="relative w-full h-24 grid grid-cols-2 gap-[5.5rem] text-white"
+        >
+          <div
+            class="relative z-10 bg-customOrange grid grid-cols-2 place-items-center rounded-r-[2rem]"
           >
-            <div class="flex items-center gap-x-4">
-              <img src="{% static 'core/home.svg' %}" alt="home" />
-              <div>Main Page</div>
-            </div>
-          </a>
-          <a
-            href="/weekly_ranking"
-            class="pl-16 p-4 block hover:bg-primary hover:bg-opacity-30 hover:border-r-[15px] hover:border-primary"
+            <a href="/">
+              <img src="{% static 'core/home.svg' %}" class="w-7" alt="home" />
+            </a>
+            <a href="/weekly_ranking">
+              <img
+                src="{% static 'core/ranking.svg' %}"
+                class="w-7"
+                alt="ranking"
+              />
+            </a>
+          </div>
+          <div
+            class="relative z-10 bg-customOrange grid grid-cols-2 place-items-center rounded-l-[2rem]"
           >
-            <div class="flex items-center gap-x-4">
-              <img src="{% static 'core/friends.svg' %}" alt="friends" />
-              <div>Weekly Ranking</div>
-            </div>
-          </a>
+            <a href="/mylist">
+              <img src="{% static 'core/logo.svg' %}" class="w-7" alt="logo" />
+            </a>
+            <a href="/profile">
+              <img src="{% static 'core/user.svg' %}" class="w-7" alt="user" />
+            </a>
+          </div>
           <a
-            href="/mylist"
-            class="pl-16 p-4 block hover:bg-primary hover:bg-opacity-30 hover:border-r-[15px] hover:border-primary"
+            href="/book/create/methods"
+            class="absolute -top-10 left-1/2 -translate-x-1/2 h-24 w-24 border-4 bg-primary rounded-full border-white flex justify-center items-center"
           >
-            <div class="flex items-center gap-x-4">
-              <img src="{% static 'core/logo.svg' %}" alt="mylist" />
-              <div>My List</div>
-            </div>
+            <img src="{% static 'core/plus.svg' %}" class="w-8" alt="plus" />
           </a>
-          <a
-            href="#"
-            class="pl-16 p-4 block hover:bg-primary hover:bg-opacity-30 hover:border-r-[15px] hover:border-primary"
-          >
-            <div class="flex items-center gap-x-4">
-              <img src="{% static 'core/setting.svg' %}" alt="setting" />
-              <div>Setting</div>
-            </div>
-          </a>
-          <a href="/book/create" class="pl-16 p-4 block">
-            <div
-              class="flex items-center gap-x-2 xl:gap-x-4 bg-customOrange py-4 px-5 rounded-full justify-center hover:bg-customOrange/80"
-            >
-              <div>Add Book</div>
-              <img src="{% static 'core/plus.svg' %}" alt="addbook" />
-            </div>
-          </a>
+          <div
+            class="absolute z-[-1] bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[80%] bg-customOrange"
+          ></div>
         </div>
       </div>
 

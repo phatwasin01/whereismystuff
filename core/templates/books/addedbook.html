@@ -45,7 +45,7 @@
     <div class="flex">
       <label class="font-bold">Picture:</label>
       <img
-        src="{% static 'core/book.png' %}"
+        src="{% if new_book.cover_image_url %}{{ new_book.cover_image_url }}{% else %}{% static 'core/book.jpeg' %}{% endif %}"
         alt="Book cover"
         class="w-24 h-24 rounded mt-2"
       />

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,11 @@ SECRET_KEY = 'django-insecure-ju!on17-5*wu1k%5dywdyi&+kcef2^^thc6$r@97smalwckl@y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['d90ba040b897a84705c1a10400e1da6b.serveo.net', 'b2f0-171-7-27-186.ngrok-free.app',
+                 'z5bs73lg-8000.asse.devtunnels.ms', '127.0.0.1', 'localhost']
+
+CSRF_TRUSTED_ORIGINS = [f'https://b2f0-171-7-27-186.ngrok-free.app',
+                        'https://z5bs73lg-8000.asse.devtunnels.ms/', 'https://d90ba040b897a84705c1a10400e1da6b.serveo.net']
 
 
 # Application definition
@@ -138,3 +143,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'frontpage'  # or where you want to redirect users after login
 # or where you want to redirect users after logout
 LOGOUT_REDIRECT_URL = 'frontpage'
+
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

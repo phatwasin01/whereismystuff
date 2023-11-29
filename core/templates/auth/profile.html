@@ -1,4 +1,4 @@
-{% extends "core/base.html" %} {% block content %} {% load static %}
+{% extends "core/baseSidebar.html" %} {% block content %} {% load static %}
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"
   integrity="sha512-M7nHCiNUOwFt6Us3r8alutZLm9qMt4s9951uo8jqO4UwJ1hziseL6O3ndFyigx6+LREfZqnhHxYjKRJ8ZQ69DQ=="
@@ -16,10 +16,10 @@
     height: 100%;
   }
 </style>
-<div class="flex flex-col h-full w-full">
+<div class="mt-16 sm:ml-64 w-full">
   {% block section %} {% include "auth/profileInput.html" %} {% endblock %}
-  <div class="w-full bg-secondary p-4 md:p-20 pb-20">
-    <p class="text-3xl text-white font-bold">Dashboard</p>
+  <div class="w-full md:p-20 pb-20">
+    <p class="text-2xl text-secondary font-bold">Dashboard</p>
     <div class="bg-white w-full mt-4 rounded-lg flex">
       <div
         class="bg-white w-full h-full mt-4 rounded-lg overflow-auto flex justify-center"
